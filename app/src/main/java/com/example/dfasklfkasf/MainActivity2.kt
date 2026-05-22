@@ -1,5 +1,6 @@
 package com.example.dfasklfkasf
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,11 @@ class MainActivity2 : AppCompatActivity() {
 
         val name = intentFromMain.getStringExtra("name")
         binding.name.text =name
+
+        binding.back.setOnClickListener {
+            val intent = Intent(this@MainActivity2, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
 
