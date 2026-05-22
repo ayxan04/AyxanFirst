@@ -1,61 +1,53 @@
 package com.example.dfasklfkasf
 
-import android.content.Context
-import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.renderscript.ScriptGroup
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.dfasklfkasf.databinding.ActivityMain2Binding
 import com.example.dfasklfkasf.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-
-
+class MainActivity2 : AppCompatActivity() {
+    private lateinit var binding: ActivityMain2Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMain2Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
+        val intentFromMain = intent
+
+        val name = intentFromMain.getStringExtra("name")
+        binding.name.text =name
 
 
-    println("oncreated")
 
-        binding.buton1.setOnClickListener {
-            val intent = Intent(this@MainActivity, MainActivity2::class.java)
-            intent.putExtra("name",binding.editTextText.text.toString())
-            startActivity(intent)
 
-        }
     }
-
     override fun onStart() {
-        println("start 1")
+        println("start 2")
         super.onStart()
     }
 
     override fun onResume() {
-        println("resume 1")
+        println("resume 2")
 
         super.onResume()
     }
 
     override fun onPause() {
-        println("pause 1")
+        println("pause 2")
         super.onPause()
     }
     override fun onStop() {
-        println("stop 1")
+        println("stop 2")
 
         super.onStop()
     }
 
     override fun onDestroy() {
-        println("destroy  1")
+        println("destroy  2")
 
         super.onDestroy()
     }
