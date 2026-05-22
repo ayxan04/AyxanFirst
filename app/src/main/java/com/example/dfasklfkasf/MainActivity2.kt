@@ -16,7 +16,7 @@ class MainActivity2 : AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
+    println("created 2")
         val intentFromMain = intent
 
         val name = intentFromMain.getStringExtra("name")
@@ -25,6 +25,7 @@ class MainActivity2 : AppCompatActivity() {
         binding.back.setOnClickListener {
             val intent = Intent(this@MainActivity2, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
 
